@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" width="400" height="240" role="img" aria-labelledby="title">
+  <title id="title">After Image, a two-colour eye poster on a print table</title>
+  <defs>
+    <pattern id="dots" width="5" height="5" patternUnits="userSpaceOnUse">
+      <circle cx="1.5" cy="1.5" r="1.3" fill="#332438"/>
+    </pattern>
+    <pattern id="hatch" width="6" height="6" patternTransform="rotate(35)" patternUnits="userSpaceOnUse">
+      <path d="M1 0v6" stroke="#684c6e" stroke-width="1.4"/>
+    </pattern>
+    <path id="eye" d="M-71 0q71-71 142 0Q0 71-71 0Z"/>
+    <clipPath id="eye-mask"><use href="#eye"/></clipPath>
+  </defs>
+  <rect width="400" height="240" fill="#725874"/>
+  <rect width="400" height="240" fill="url(#hatch)"/>
+  <g transform="rotate(-12 185 121)">
+    <rect x="92" y="25" width="169" height="187" fill="#4e3b51"/>
+    <rect x="88" y="21" width="169" height="187" fill="#d4bada"/>
+    <path d="M97 30h150v168H97z" fill="url(#dots)"/>
+  </g>
+  <g transform="rotate(8 211 119)">
+    <rect x="128" y="24" width="176" height="194" fill="#432d40" opacity=".65"/>
+    <rect x="122" y="18" width="176" height="194" fill="#ffab96"/>
+    <path d="M131 28h158m-158 171h158" stroke="#41263d" stroke-width="1.4"/>
+    <g font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="38" letter-spacing="-2.7" fill="#342237">
+      <text x="131" y="63">AFTER</text><text x="131" y="94">IMAGE</text>
+    </g>
+    <g transform="translate(210 143) rotate(-9)">
+      <use href="#eye" transform="translate(2 5)" fill="#d75560"/>
+      <use href="#eye" fill="#ffdfc1" stroke="#342237" stroke-width="3"/>
+      <g clip-path="url(#eye-mask)">
+        <circle r="31" fill="#a088d7" stroke="#342237" stroke-width="2"/>
+        <circle r="26" fill="url(#dots)"/><circle r="16" fill="#342237"/>
+        <circle cx="5" cy="-6" r="4.5" fill="#ffdfc1"/>
+      </g>
+    </g>
+    <g fill="#342237"><circle cx="137" cy="189" r="3"/><path d="M142 189h19m3 0h7" stroke="#342237" stroke-width="2"/></g>
+    <path d="M271 183v12m-6-6h12m6-6v12m-6-6h12" fill="none" stroke="#342237"/>
+  </g>
+</svg>

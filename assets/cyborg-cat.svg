@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="120" viewBox="0 0 96 120" shape-rendering="crispEdges">
+  <title>Cyborg cat turning from east to southeast, south, northeast and north; rest and two walking poses</title>
+  <defs>
+    <g id="shell">
+      <!-- Segmented, upturned tail behind the flank. -->
+      <path fill="#24192f" d="M1 5h5v2h1v5h2v2h3v5H7v-2H5v-2H3v-3H2V8H1z"/>
+      <path fill="#967fb8" d="M2 6h3v2h1v5h2v2h3v3H8v-2H6v-2H4v-3H3V8H2z"/>
+      <path fill="#8efbe3" d="M2 6h3v2H2z"/><path fill="#51415e" d="M3 10h3v1H3zm2 4h2v1H5z"/>
+      <!-- Rounded haunch, stepped back and an exposed panel on the flank. -->
+      <path fill="#24192f" d="M7 13h2v-2h3v-1h7v1h4v3h3v4h-2v2H9v-1H7z"/>
+      <path fill="#aa91c7" d="M8 14h2v-2h3v-1h5v1h4v3h3v2h-2v2H10v-1H8z"/>
+      <path fill="#dbc9e7" d="M10 12h3v-1h5v2h-7v1h-1z"/>
+      <path fill="#80668f" d="M8 16h2v1h5v1h5v-2h3v3H10v-1H8z"/>
+      <path fill="#57495e" d="M12 14h5v3h-5z"/><path fill="#82d6c6" d="M13 15h3v1h-3z"/>
+      <!-- Two pointed ears, a square muzzle, optical implant and whiskers. -->
+      <path fill="#24192f" d="M17 2h2v1h1v1h1v1h3V4h1V3h1V2h2v7h1v2h2v3h-2v2h-3v1h-6v-1h-2v-2h-2V8h1z"/>
+      <path fill="#cfbbdc" d="M18 3h1v2h2v1h4V5h1V4h1v5h1v3h2v1h-2v2h-3v1h-4v-1h-2v-2h-2V9h1z"/>
+      <path fill="#926faf" d="M18 5h1v1h1v1h-2zm7 1h1V5h1v3h-2z"/>
+      <path fill="#aa8aba" d="M17 9h2v4h2v2h-2v-2h-2zm4 5h4v2h-4z"/>
+      <path fill="#eee1ee" d="M20 7h5v1h-5zm7 5h3v1h-3zm-2 1h3v2h-3z"/>
+      <path fill="#503d5c" d="M19 9h3v3h-3zm5-1h4v4h-4z"/>
+      <path fill="#5ce6d4" d="M24 9h4v2h-4z"/><path fill="#ecfff3" d="M26 9h2v1h-2z"/>
+      <path fill="#312239" d="M20 10h1v1h-1zm9 2h2v1h-2z"/>
+      <path fill="#c1a8d4" d="M14 12h4v1h-4zm1 2h4v1h-4z"/>
+    </g>
+    <g id="paw"><path fill="#33263e" d="M0 0h4v4h1v2H0z"/><path fill="#ab92bf" d="M1 0h2v4H1z"/><path fill="#e7d5ec" d="M1 4h3v1H1z"/></g>
+    <g id="far-paw" fill="#725c83"><path d="M0 0h3v4h1v1H0z"/></g>
+    <!-- End-on helmet: stepped ear tips, cheek flares and a tapered jaw. -->
+    <g id="helmet">
+      <path fill="#24192f" d="M9 2h2v1h1v1h1v1h6V4h1V3h1V2h2v7h1v4h-1v2h-2v1h-2v1h-6v-1h-2v-1H9v-2H8V9h1z"/>
+      <path fill="#cfbbdc" d="M10 3h1v2h2v1h6V5h2V4h1v6h1v3h-2v2h-3v1h-4v-1h-3v-2H9v-3h1z"/>
+    </g>
+    <g id="mask-front">
+      <use href="#helmet"/>
+      <path fill="#926faf" d="M10 5h1v1h1v2h-2zm10 1h1V5h1v3h-2z"/>
+      <path fill="#eee1ee" d="M13 7h6v1h-6zm0 6h6v2h-6z"/>
+      <path fill="#503d5c" d="M10 9h4v3h-4zm7 0h5v4h-5z"/>
+      <path fill="#312239" d="M12 10h2v2h-2zm3 2h2v1h-2z"/>
+      <path fill="#5ce6d4" d="M18 10h4v2h-4z"/><path fill="#ecfff3" d="M20 10h2v1h-2z"/>
+      <path fill="#aa8aba" d="M7 12h4v1H7zm1 2h4v1H8zm13-2h4v1h-4zm-1 2h4v1h-4z"/>
+    </g>
+    <g id="mask-quarter">
+      <use href="#helmet"/>
+      <path fill="#926faf" d="M10 5h1v1h2v2h-3zm11 1h1v2h-1z"/>
+      <path fill="#aa8aba" d="M9 9h3v4h2v2h-3v-2H9z"/>
+      <path fill="#eee1ee" d="M14 7h5v1h-5zm3 6h5v1h-1v1h-4z"/>
+      <path fill="#503d5c" d="M13 9h3v3h-3zm5 0h5v4h-5z"/>
+      <path fill="#5ce6d4" d="M19 10h4v2h-4z"/><path fill="#ecfff3" d="M21 10h2v1h-2z"/>
+      <path fill="#312239" d="M14 10h1v1h-1zm6 2h2v1h-2z"/>
+      <path fill="#c1a8d4" d="M7 12h5v1H7zm1 2h5v1H8z"/>
+    </g>
+    <g id="mask-rear">
+      <use href="#helmet"/>
+      <path fill="#aa91c7" d="M10 5h1v2h3v1h4V7h3V5h1v5h1v3h-2v2h-3v1h-4v-1h-3v-2H9v-3h1z"/>
+      <path fill="#dbc9e7" d="M13 6h6v1h-6z"/><path fill="#80668f" d="M10 10h2v2h8v-1h2v2h-2v1h-8v-1h-2z"/>
+    </g>
+    <!-- Compact chassis end-on; wider stepped flank on the oblique axis. -->
+    <g id="rump">
+      <path fill="#24192f" d="M12 9h8v1h2v2h1v6h-1v2h-3v1h-6v-1h-3v-2H9v-6h1v-2h2z"/>
+      <path fill="#aa91c7" d="M12 10h8v1h1v2h1v5h-2v1h-2v1h-4v-1h-3v-2h-1v-4h1v-2h1z"/>
+      <path fill="#dbc9e7" d="M12 11h7v1h-6v1h-2v-1h1z"/><path fill="#80668f" d="M10 16h2v2h8v-2h2v2h-2v1h-2v1h-4v-1h-3v-2h-1z"/>
+    </g>
+    <g id="flank">
+      <path fill="#24192f" d="M15 8h6v1h3v2h1v5h-2v2h-3v2h-9v-1H8v-2H7v-4h1v-2h3V9h4z"/>
+      <path fill="#aa91c7" d="M15 9h6v1h2v2h1v3h-2v2h-3v2h-7v-1H9v-2H8v-3h1v-1h3v-2h3z"/>
+      <path fill="#dbc9e7" d="M15 9h5v1h-5v1h-3v1h-2v-1h2v-1h3z"/>
+      <path fill="#80668f" d="M8 15h2v2h4v1h4v-1h3v1h-2v1h-7v-1H9v-2H8z"/>
+      <path fill="#57495e" d="M10 13h5v3h-5z"/><path fill="#82d6c6" d="M11 14h3v1h-3z"/>
+    </g>
+    <!-- Tail lifted away from the face in front views; over the rump from behind. -->
+    <g id="coil">
+      <path fill="#24192f" d="M1 0h4v2h1v5h1v2h2v1h2v4H8v-1H6v-2H4V9H3V6H2V3H1z"/>
+      <path fill="#967fb8" d="M2 1h2v2h1v5h1v2h2v1h2v2H9v-1H7v-2H5V8H4V5H3V3H2z"/>
+      <path fill="#8efbe3" d="M2 1h2v2H2z"/><path fill="#51415e" d="M3 5h2v1H3zm2 4h1v1H5z"/>
+    </g>
+    <g id="se-shell"><use href="#coil" x="1" y="3"/><use href="#flank"/><use href="#mask-quarter" x="5" y="1"/></g>
+    <g id="s-shell"><use href="#coil" x="4" y="3"/><use href="#rump"/><use href="#mask-front"/></g>
+    <g id="ne-shell"><use href="#mask-rear" x="5" y="-1"/><path fill="#503d5c" d="M27 8h2v4h-2z"/><path fill="#5ce6d4" d="M28 9h1v2h-1z"/><use href="#flank"/><use href="#coil" x="2" y="5"/></g>
+    <g id="n-shell"><use href="#mask-rear"/><use href="#rump"/><use href="#coil" x="6" y="5"/></g>
+    <!-- The nearer legs alternate extension; the farther pair countersteps. -->
+    <g id="feet-end-0"><use href="#far-paw" x="8" y="15"/><use href="#far-paw" x="20" y="15"/><use href="#paw" x="10" y="17"/><use href="#paw" x="17" y="17"/></g>
+    <g id="feet-end-a"><use href="#far-paw" x="8" y="14"/><use href="#far-paw" x="21" y="16"/><use href="#paw" x="9" y="17"/><use href="#paw" x="17" y="15"/></g>
+    <g id="feet-end-b"><use href="#far-paw" x="8" y="16"/><use href="#far-paw" x="20" y="14"/><use href="#paw" x="10" y="15"/><use href="#paw" x="18" y="17"/></g>
+    <g id="feet-diag-0"><use href="#far-paw" x="12" y="15"/><use href="#far-paw" x="22" y="15"/><use href="#paw" x="8" y="16"/><use href="#paw" x="18" y="17"/></g>
+    <g id="feet-diag-a"><use href="#far-paw" x="13" y="16"/><use href="#far-paw" x="21" y="14"/><use href="#paw" x="7" y="15"/><use href="#paw" x="19" y="17"/></g>
+    <g id="feet-diag-b"><use href="#far-paw" x="10" y="14"/><use href="#far-paw" x="22" y="16"/><use href="#paw" x="9" y="17"/><use href="#paw" x="17" y="15"/></g>
+  </defs>
+  <g id="rest">
+    <use href="#far-paw" x="13" y="17"/><use href="#far-paw" x="23" y="17"/>
+    <use href="#paw" x="8" y="17"/><use href="#paw" x="20" y="17"/><use href="#shell"/>
+  </g>
+  <g id="stride-a" transform="translate(32)">
+    <use href="#far-paw" x="14" y="17"/><use href="#far-paw" x="18" y="16"/>
+    <use href="#paw" x="7" y="16"/><use href="#paw" x="22" y="17"/><use href="#shell"/>
+  </g>
+  <g id="stride-b" transform="translate(64)">
+    <use href="#far-paw" x="8" y="17"/><use href="#far-paw" x="23" y="17"/>
+    <use href="#paw" x="11" y="17"/><use href="#paw" x="18" y="16"/><use href="#shell" y="-1"/>
+  </g>
+  <g id="southeast" transform="translate(0 24)">
+    <use href="#feet-diag-0"/><use href="#se-shell"/>
+    <use href="#feet-diag-a" x="32"/><use href="#se-shell" x="32"/>
+    <use href="#feet-diag-b" x="64"/><use href="#se-shell" x="64" y="-1"/>
+  </g>
+  <g id="south" transform="translate(0 48)">
+    <use href="#feet-end-0"/><use href="#s-shell"/>
+    <use href="#feet-end-a" x="32"/><use href="#s-shell" x="32"/>
+    <use href="#feet-end-b" x="64"/><use href="#s-shell" x="64" y="-1"/>
+  </g>
+  <g id="northeast" transform="translate(0 72)">
+    <use href="#feet-diag-0"/><use href="#ne-shell"/>
+    <use href="#feet-diag-a" x="32"/><use href="#ne-shell" x="32"/>
+    <use href="#feet-diag-b" x="64"/><use href="#ne-shell" x="64"/>
+  </g>
+  <g id="north" transform="translate(0 96)">
+    <use href="#feet-end-0"/><use href="#n-shell"/>
+    <use href="#feet-end-a" x="32"/><use href="#n-shell" x="32"/>
+    <use href="#feet-end-b" x="64"/><use href="#n-shell" x="64" y="-1"/>
+  </g>
+</svg>

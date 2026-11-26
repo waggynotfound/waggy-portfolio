@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>waggynotfound</title>
+<meta name="description" content="Developer building the things you wish and an Editor creating the things you deserve.">
+<meta name="theme-color" content="#070509">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='11' fill='%239B6BFF'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wdth,wght@75..100,400..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+
+<a class="skip" href="#work">Skip to work</a>
+
+<!-- CRT screen layers -->
+<div class="crt" aria-hidden="true">
+  <div class="crt-grille"></div>
+  <div class="crt-scanlines"></div>
+  <div class="crt-band"></div>
+  <div class="crt-flicker"></div>
+
+</div>
+<div class="crt-boot" aria-hidden="true">
+  <div class="boot-post">
+    <p class="boot-line" data-boot="WAGGY SYSTEMS BIOS v2.6"></p>
+    <p class="boot-line" data-boot="CRT-1998 video adapter ...... OK"></p>
+    <p class="boot-line" data-boot="phosphor: violet ............ OK"></p>
+    <p class="boot-line" data-boot="scanlines ................... OK"></p>
+    <p class="boot-line" data-boot="mounting /portfolio ......... OK"></p>
+    <p class="boot-line" data-boot="signal acquired — starting up"></p>
+  </div>
+  <i class="boot-beam"></i>
+</div>
+
+<canvas id="field" aria-hidden="true"></canvas>
+<div class="grain" aria-hidden="true"></div>
+<div class="veil" aria-hidden="true"></div>
+
+<div class="progress" aria-hidden="true"><i></i></div>
+
+<div class="cursor" aria-hidden="true">
+  <span class="cursor-ring"></span>
+  <span class="cursor-dot"></span>
+  <div class="cursor-cat"><i class="cursor-cat-sprite"></i></div>
+</div>
+
+<header class="top" id="top">
+  <div class="shell top-inner">
+    <a class="mark" href="#top" data-split>waggy</a>
+    <nav class="nav" aria-label="Main">
+      <a href="#work">work</a>
+      <a href="#about">about</a>
+      <a href="#elsewhere">elsewhere</a>
+      <a href="#socials">socials</a>
+      <a href="#contact">contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="shell hero-grid">
+
+      <div class="hero-main">
+        <p class="term" data-reveal data-parallax="0.04">
+          <span class="term-line" data-type="boot waggy.sys — signal acquired"></span><span class="term-caret" aria-hidden="true"></span>
+        </p>
+
+        <p class="kicker" data-reveal>developer and editor, at your service</p>
+
+        <h1 class="hero-title" data-parallax="0.06">
+          <span class="line"><span class="line-in" style="--d:.05s">waggy<span class="spark" aria-hidden="true"></span></span></span>
+        </h1>
+
+        <p class="lede" data-reveal style="--d:.55s">
+          I'm a developer and editor who builds the things you wish and creates the things you deserve. I do it fast and cheap without compromising quality, and I can do it for you.
+        </p>
+
+        <div class="hero-actions" data-reveal style="--d:.7s">
+          <a class="btn" href="#work" data-magnet>See the work</a>
+          <a class="btn btn-ghost" href="mailto:waggynotfound@gmail.com" data-magnet>waggynotfound@gmail.com</a>
+        </div>
+
+        <ul class="badges" data-reveal style="--d:.82s">
+          <li class="badge">full-stack developer</li>
+          <li class="badge">content editor</li>
+          <li class="badge">editor</li>
+          <li class="badge">designer</li>
+          <li class="badge">cheap</li>
+          <li class="badge">fast</li>
+          <li class="badge">quality</li>
+        </ul>
+      </div>
+
+      <aside class="hero-meta" data-reveal data-parallax="0.1" style="--d:.9s">
+        <div class="profile-banner">
+          <picture>
+            <source type="image/gif" media="(prefers-reduced-motion: no-preference)" srcset="assets/waggy-banner.gif">
+            <img src="assets/waggy-banner-still.jpg" width="498" height="220" alt="Neon WAGGY lettering behind a violet anime portrait.">
+          </picture>
+          <button class="banner-toggle" type="button" aria-label="Pause banner animation" hidden>
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path class="banner-pause" d="M3 2h3v12H3zm7 0h3v12h-3z"/><path class="banner-play" d="m4 2 9 6-9 6z"/></svg>
+          </button>
+        </div>
+        <div class="avatar-wrap">
+          <img class="avatar" data-discord-avatar src="assets/discord-avatar.png" width="52" height="52" alt="Waggy’s Discord profile picture">
+          <div class="avatar-text">
+            <span class="avatar-name">waggy</span>
+            <span class="avatar-sub">developer & editor</span>
+          </div>
+        </div>
+
+        <div class="np" aria-label="Now playing">
+          <div class="np-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+          <div class="np-text">
+            <span class="np-label">now playing</span>
+            <span class="np-track" data-np title="Boards of Canada — Roygbiv">Boards of Canada — Roygbiv</span>
+          </div>
+        </div>
+
+        <div class="dcard" id="dcard" aria-label="Discord presence">
+          <div class="dcard-brand">
+            <svg class="dcard-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.865-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.058a.082.082 0 0 0 .031.056 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.291.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.175 1.096 2.156 2.42 0 1.333-.946 2.418-2.156 2.418Z"/></svg>
+            <div class="dcard-brand-text">
+              <span class="dcard-t">Discord</span>
+              <span class="dcard-s" id="dcard-handle">@waggynotfound</span>
+            </div>
+          </div>
+          <div class="dcard-presence">
+            <span class="dcard-avatar-wrap">
+              <img class="dcard-avatar" id="d-avatar" data-discord-avatar src="assets/discord-avatar.png" width="30" height="30" alt="">
+              <span class="d-dot" id="d-dot" aria-hidden="true"></span>
+            </span>
+            <div class="dcard-presence-text">
+              <span class="dcard-username" id="d-name">waggynotfound</span>
+              <span class="dcard-status-label" id="d-status">offline</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="meta-row">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span>open to freelance</span>
+        </div>
+        <div class="meta-row">
+          <span class="meta-key">local</span>
+          <span class="meta-val" data-clock>--:--</span>
+        </div>
+        <div class="meta-row">
+          <span class="meta-key">uptime</span>
+          <span class="meta-val" data-uptime>00:00:00</span>
+        </div>
+        <div class="meta-row">
+          <span class="meta-key">timezone</span>
+          <span class="meta-val">GMT+5:30</span>
+        </div>
+        <div class="meta-row">
+          <span class="meta-key">last ship</span>
+          <span class="meta-val">4 days ago</span>
+        </div>
+      </aside>
+    </div>
+
+    <div class="scroll-hint" aria-hidden="true">
+      <span class="scroll-line"></span>
+    </div>
+  </section>
+
+  <section class="work" id="work">
+    <div class="shell">
+
+      <div class="section-head">
+        <h2 class="sec-title" data-reveal data-split data-parallax="0.05">Selected work</h2>
+        <p data-reveal style="--d:.08s">More projects coming soon!</p>
+      </div>
+
+      <div class="work-list">
+
+        <article class="work-item">
+          <h3>
+            <button class="work-head" type="button" aria-expanded="false" aria-controls="p1">
+              <span class="w-index">01</span>
+              <img class="work-thumb" src="assets/work/alchemist.svg" width="400" height="240" alt="" decoding="async">
+              <span class="w-title" id="p1-t" data-split>Alchemist </span>
+              <span class="w-tag">editing</span>
+              <span class="w-sign" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="work-body" id="p1" role="region" aria-labelledby="p1-t">
+            <div class="work-inner">
+              <div class="work-copy">
+                <p>Have edited many videos of indie gaming creators and podcast hosts. Hoping to get more work in this space.</p>
+                <dl class="work-meta">
+                  <div><dt>role</dt><dd>sketch to scale</dd></div>
+                  <div><dt>stack</dt><dd>capcut, da vinci, canva</dd></div>
+                  <div><dt>state</dt><dd>10+ videos</dd></div>
+                </dl>
+                <a class="work-link" href="#contact">Ask me for a demo <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+              </div>
+              <img class="work-art" src="assets/work/alchemist.svg" width="400" height="240" alt="A violet VHS cassette labelled Rough Cut." decoding="async">
+            </div>
+          </div>
+        </article>
+
+        <article class="work-item">
+          <h3>
+            <button class="work-head" type="button" aria-expanded="false" aria-controls="p2">
+              <span class="w-index">02</span>
+              <img class="work-thumb" src="assets/work/site-smith.svg" width="400" height="240" alt="" decoding="async">
+              <span class="w-title" id="p2-t" data-split>Site Smith</span>
+              <span class="w-tag">websites</span>
+              <span class="w-sign" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="work-body" id="p2" role="region" aria-labelledby="p2-t">
+            <div class="work-inner">
+              <div class="work-copy">
+                <p>Build websites like never before. Make them fast, accessible, and beautiful.</p>
+                <dl class="work-meta">
+                  <div><dt>role</dt><dd>front end, interaction</dd></div>
+                  <div><dt>stack</dt><dd>vs code, claude</dd></div>
+                  <div><dt>state</dt><dd>3+ sites up</dd></div>
+                </dl>
+                <a class="work-link" href="#contact">Ask me for a demo <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+              </div>
+              <img class="work-art" src="assets/work/site-smith.svg" width="400" height="240" alt="A website with a wireframe globe, shown in desktop and phone layouts." decoding="async">
+            </div>
+          </div>
+        </article>
+
+        <article class="work-item">
+          <h3>
+            <button class="work-head" type="button" aria-expanded="false" aria-controls="p3">
+              <span class="w-index">03</span>
+              <img class="work-thumb" src="assets/work/visual-hooker.svg" width="400" height="240" alt="" decoding="async">
+              <span class="w-title" id="p3-t" data-split>Visual Hooker</span>
+              <span class="w-tag">gfx designer</span>
+              <span class="w-sign" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="work-body" id="p3" role="region" aria-labelledby="p3-t">
+            <div class="work-inner">
+              <div class="work-copy">
+                <p>Design stunning visuals for your projects. Eye catching thumbnails and posters.</p>
+                <dl class="work-meta">
+                  <div><dt>role</dt><dd>graphic designer</dd></div>
+                  <div><dt>stack</dt><dd>adobe suite, canva</dd></div>
+                  <div><dt>state</dt><dd>20+ designs completed</dd></div>
+                </dl>
+                <a class="work-link" href="#contact">Ask me for a demo <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+              </div>
+              <img class="work-art" src="assets/work/visual-hooker.svg" width="400" height="240" alt="A coral After Image poster with a violet halftone eye." decoding="async">
+            </div>
+          </div>
+        </article>
+
+        <article class="work-item">
+          <h3>
+            <button class="work-head" type="button" aria-expanded="false" aria-controls="p4">
+              <span class="w-index">04</span>
+              <img class="work-thumb" src="assets/work/product-builder.svg" width="400" height="240" alt="" decoding="async">
+              <span class="w-title" id="p4-t" data-split>Product Builder</span>
+              <span class="w-tag">softwares</span>
+              <span class="w-sign" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="work-body" id="p4" role="region" aria-labelledby="p4-t">
+            <div class="work-inner">
+              <div class="work-copy">
+                <p>Solve your problems with perfect software solutions.</p>
+                <dl class="work-meta">
+                  <div><dt>role</dt><dd>front end and back end</dd></div>
+                  <div><dt>stack</dt><dd>vs code and ai agents</dd></div>
+                  <div><dt>state</dt><dd>multiple projects completed</dd></div>
+                </dl>
+                <a class="work-link" href="#contact">Ask me for a demo <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+              </div>
+              <img class="work-art" src="assets/work/product-builder.svg" width="400" height="240" alt="Three separated processor layers with a terminal prompt on the lid." decoding="async">
+            </div>
+          </div>
+        </article>
+
+        <article class="work-item gh-work">
+          <h3>
+            <button class="work-head" type="button" aria-expanded="false" aria-controls="p5">
+              <span class="w-index">05</span>
+              <img class="work-thumb gh-chart" src="assets/work/github-calendar.svg" width="388" height="203" alt="" decoding="async">
+              <span class="w-title" id="p5-t" data-split>GitHub activity</span>
+              <span class="w-tag">@waggynotfound</span>
+              <span class="w-sign" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="work-body" id="p5" role="region" aria-labelledby="p5-t">
+            <div class="work-inner">
+              <div class="work-copy">
+                <h4>Recently updated repositories</h4>
+                <ul class="gh-repos">
+                  <li><a href="https://github.com/waggynotfound/ascii-christmas-animation">ascii-christmas-animation</a></li>
+                  <li><a href="https://github.com/waggynotfound/fake-contributions">fake-contributions</a></li>
+                  <li><a href="https://github.com/waggynotfound/auto-xtract">auto-xtract</a></li>
+                </ul>
+                <small class="gh-repo-status">Snapshot · 26 Nov 2026</small>
+                <a class="work-link" href="https://github.com/waggynotfound?tab=repositories">All repositories <span aria-hidden="true">↗</span></a>
+              </div>
+              <figure class="work-art gh-activity">
+                <figcaption><strong class="gh-total">370 contributions</strong><span class="gh-range">Nov 2025 – Nov 2026</span></figcaption>
+                <img class="gh-chart" src="assets/work/github-calendar.svg" width="388" height="203" alt="Daily contributions over the last year, read left to right in two rows of weeks. Brighter squares mean more activity.">
+                <small class="gh-chart-status">Snapshot · 26 Nov 2026</small>
+              </figure>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about" aria-labelledby="about-title">
+    <div class="shell">
+      <div class="about-profile">
+        <div class="about-bio">
+          <h2 class="about-title" id="about-title">About waggy</h2>
+          <p class="about-lead">My other editor is VS Code.</p>
+          <p>I cut videos for indie gaming creators and podcast hosts in DaVinci Resolve and CapCut. I also design thumbnails and posters with Adobe apps and Canva.</p>
+          <p>On the code side, I build fast, accessible websites and custom software, from the interface to the back end. If you’re working with a tight deadline or a small budget, I’d like to hear what you have in mind.</p>
+          <a class="about-link" href="#contact">Tell me about your project</a>
+        </div>
+        <figure class="about-desk">
+          <img src="assets/about-desk.svg" width="500" height="330" alt="Illustrated CRT workstation with a video timeline and a code editor open side by side." loading="lazy" decoding="async">
+          <figcaption><span>@waggynotfound</span><span>GMT+5:30</span></figcaption>
+        </figure>
+      </div>
+      <ul class="about-credits" aria-label="Work so far">
+        <li><strong>10+</strong> videos edited</li>
+        <li><strong>20+</strong> designs completed</li>
+        <li><strong>3+</strong> sites live</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="elsewhere" id="elsewhere">
+    <div class="shell">
+      <div class="section-head">
+        <h2 class="sec-title" data-reveal data-split data-parallax="0.05">Elsewhere</h2>
+        <p data-reveal style="--d:.08s">The rest of it lives off this page.</p>
+      </div>
+
+      <ul class="else-list">
+        <li>
+          <a href="https://github.com/waggynotfound/" target="_blank" rel="noopener">
+            <span class="else-name">github</span>
+            <span class="else-desc">Source for everything here, plus the small tools that never got a page.</span>
+            <span class="else-sign" aria-hidden="true">↗</span>
+          </a>
+        </li>
+        <li>
+          <a href="#elsewhere">
+            <span class="else-name">now</span>
+            <span class="else-desc">idling for now</span>
+            <span class="else-sign" aria-hidden="true">↗</span>
+          </a>
+        </li>
+        <li>
+          <a href="#contact">
+            <span class="else-name">notes</span>
+            <span class="else-desc">email for work</span>
+            <span class="else-sign" aria-hidden="true">↗</span>
+          </a>
+        </li>
+        <li>
+          <a href="#elsewhere">
+            <span class="else-name">status</span>
+            <span class="else-desc">jee is upfront, dnd for now</span>
+            <span class="else-sign" aria-hidden="true">↗</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="socials" id="socials">
+    <div class="shell">
+      <div class="section-head">
+        <h2 class="sec-title" data-reveal data-split data-parallax="0.05">Socials</h2>
+        <p data-reveal style="--d:.08s">Everywhere I exist, ranked by how often I am awake there.</p>
+      </div>
+
+      <ul class="soc-grid">
+        <li>
+          <a class="soc" href="mailto:waggynotfound@gmail.com" style="--brand:#9B6BFF">
+            <svg class="soc-ic soc-ic-line" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></svg>
+            <span class="soc-name">email</span>
+            <span class="soc-handle">waggynotfound@gmail.com</span>
+            <span class="soc-sign" aria-hidden="true">↗</span>
+          </a>
+        </li>
+        <li>
+          <a class="soc" href="https://discord.com/users/1098532427426693120" target="_blank" rel="noopener" style="--brand:#5865F2">
+            <svg class="soc-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg>
+            <span class="soc-name">discord</span>
+            <span class="soc-handle">@waggynotfound</span>
+            <span class="soc-sign" aria-hidden="true">↗</span>
+          </a>
+        </li>
+        <li>
+          <a class="soc" href="https://github.com/waggynotfound/" target="_blank" rel="noopener" style="--brand:#FFFFFF">
+            <svg class="soc-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+            <span class="soc-name">github</span>
+            <span class="soc-handle">@waggynotfound</span>
+            <span class="soc-sign" aria-hidden="true">↗</span>
+          </a>
+        </li>
+        <li>
+          <a class="soc" href="https://www.last.fm/user/waggynotfound" target="_blank" rel="noopener" style="--brand:#D51007">
+            <svg class="soc-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M10.584 17.21l-.88-2.392s-1.43 1.594-3.573 1.594c-1.897 0-3.244-1.649-3.244-4.288 0-3.382 1.704-4.591 3.381-4.591 2.42 0 3.189 1.567 3.849 3.574l.88 2.749c.88 2.666 2.529 4.81 7.285 4.81 3.409 0 5.718-1.044 5.718-3.793 0-2.227-1.265-3.381-3.63-3.931l-1.758-.385c-1.21-.275-1.567-.77-1.567-1.595 0-.934.742-1.484 1.952-1.484 1.32 0 2.034.495 2.144 1.677l2.749-.33c-.22-2.474-1.924-3.492-4.729-3.492-2.474 0-4.893.935-4.893 3.932 0 1.87.907 3.051 3.189 3.601l1.87.44c1.402.33 1.869.907 1.869 1.704 0 1.017-.99 1.43-2.86 1.43-2.776 0-3.93-1.457-4.59-3.464l-.907-2.75c-1.155-3.573-2.997-4.893-6.653-4.893C2.144 5.333 0 7.89 0 12.233c0 4.18 2.144 6.434 5.993 6.434 3.106 0 4.591-1.457 4.591-1.457z"/></svg>
+            <span class="soc-name">last.fm</span>
+            <span class="soc-handle">@waggynotfound</span>
+            <span class="soc-sign" aria-hidden="true">↗</span>
+          </a>
+        </li>
+        <li>
+          <a class="soc" href="#steam" aria-label="See my Steam stats" style="--brand:#66C0F4">
+            <svg class="soc-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M11.979 0C5.678 0 .511 4.86.022 11.037l6.432 2.658c.545-.371 1.203-.59 1.912-.59.063 0 .125.004.188.006l2.861-4.142V8.91c0-2.495 2.028-4.524 4.524-4.524 2.494 0 4.524 2.031 4.524 4.527s-2.03 4.525-4.524 4.525h-.105l-4.076 2.911c0 .052.004.105.004.159 0 1.875-1.515 3.396-3.39 3.396-1.635 0-3.016-1.173-3.331-2.727L.436 15.27C1.862 20.307 6.486 24 11.979 24c6.627 0 11.999-5.373 11.999-12S18.605 0 11.979 0zM7.54 18.21l-1.473-.61c.262.543.714.999 1.314 1.25 1.297.539 2.793-.076 3.332-1.375.263-.63.264-1.319.005-1.949s-.75-1.121-1.377-1.383c-.624-.26-1.29-.249-1.878-.03l1.523.63c.956.4 1.409 1.5 1.009 2.455-.397.957-1.497 1.41-2.454 1.012H7.54zm11.415-9.303c0-1.662-1.353-3.015-3.015-3.015-1.665 0-3.015 1.353-3.015 3.015 0 1.665 1.35 3.015 3.015 3.015 1.663 0 3.015-1.35 3.015-3.015zm-5.273-.005c0-1.252 1.013-2.266 2.265-2.266 1.249 0 2.266 1.014 2.266 2.266 0 1.251-1.017 2.265-2.266 2.265-1.253 0-2.265-1.014-2.265-2.265z"/></svg>
+            <span class="soc-name">steam</span>
+            <span class="soc-handle">see my stats ↓</span>
+            <span class="soc-sign" aria-hidden="true">↓</span>
+          </a>
+        </li>
+        <li>
+          <a class="soc" href="https://letterboxd.com/waggynotfound/" target="_blank" rel="noopener" style="--brand:#00E054">
+            <svg class="soc-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.224 14.352a4.447 4.447 0 0 1-3.775 2.092C1.992 16.444 0 14.454 0 12s1.992-4.444 4.45-4.444c1.592 0 2.988.836 3.774 2.092-.427.682-.673 1.488-.673 2.352s.246 1.67.673 2.352zM15.101 12c0-.864.247-1.67.674-2.352-.786-1.256-2.183-2.092-3.775-2.092s-2.989.836-3.775 2.092c.427.682.674 1.488.674 2.352s-.247 1.67-.674 2.352c.786 1.256 2.183 2.092 3.775 2.092s2.989-.836 3.775-2.092A4.42 4.42 0 0 1 15.1 12zm4.45-4.444a4.447 4.447 0 0 0-3.775 2.092c.427.682.673 1.488.673 2.352s-.246 1.67-.673 2.352a4.447 4.447 0 0 0 3.775 2.092C22.008 16.444 24 14.454 24 12s-1.992-4.444-4.45-4.444z"/></svg>
+            <span class="soc-name">letterboxd</span>
+            <span class="soc-handle">@waggynotfound</span>
+            <span class="soc-sign" aria-hidden="true">↗</span>
+          </a>
+        </li>
+        <li>
+          <a class="soc" href="https://pinterest.com/waggynotfound/" target="_blank" rel="noopener" style="--brand:#E60023">
+            <svg class="soc-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026L12.017 0z"/></svg>
+            <span class="soc-name">pinterest</span>
+            <span class="soc-handle">@waggynotfound</span>
+            <span class="soc-sign" aria-hidden="true">↗</span>
+          </a>
+        </li>
+        <li>
+          <a class="soc" href="#spotify" aria-label="See my Spotify stats" style="--brand:#1DB954">
+            <svg class="soc-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+            <span class="soc-name">spotify</span>
+            <span class="soc-handle">see my stats ↓</span>
+            <span class="soc-sign" aria-hidden="true">↓</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="platform-stats">
+    <div class="shell platform-pair">
+      <section class="spotify" id="spotify">
+        <div class="section-head">
+          <h2 class="sec-title sp-title" data-reveal data-split data-parallax="0.05">Spotify</h2>
+          <p data-reveal style="--d:.08s">What has been on rotation. Wired to my profile below.</p>
+        </div>
+
+        <div class="sp-stats" data-reveal>
+          <div class="sp-stat"><span class="sp-num" data-count="7058">7,058</span><span class="sp-key">scrobbles</span></div>
+          <div class="sp-stat"><span class="sp-num" data-count="772">772</span><span class="sp-key">artists on rotation</span></div>
+          <div class="sp-stat"><span class="sp-num">2026</span><span class="sp-key">listening since</span></div>
+        </div>
+
+        <div class="sp-card" data-reveal>
+          <h3 class="sp-h">Top artists</h3>
+          <ol class="sp-list">
+            <li><span class="sp-name-a">Kanye West</span><span class="sp-bar"><i style="--w:100%"></i></span><span class="sp-plays">477</span></li>
+            <li><span class="sp-name-a">Radiohead</span><span class="sp-bar"><i style="--w:41%"></i></span><span class="sp-plays">194</span></li>
+            <li><span class="sp-name-a">Joji</span><span class="sp-bar"><i style="--w:36%"></i></span><span class="sp-plays">170</span></li>
+            <li><span class="sp-name-a">PinkPantheress</span><span class="sp-bar"><i style="--w:33%"></i></span><span class="sp-plays">159</span></li>
+            <li><span class="sp-name-a">Daft Punk</span><span class="sp-bar"><i style="--w:31%"></i></span><span class="sp-plays">150</span></li>
+          </ol>
+        </div>
+        <div class="sp-card" data-reveal style="--d:.1s">
+          <h3 class="sp-h">On repeat</h3>
+          <ol class="sp-tracks">
+            <li><span class="sp-t">Harvey</span><span class="sp-a">Her's</span></li>
+            <li><span class="sp-t">Supermassive Black Hole</span><span class="sp-a">Muse</span></li>
+            <li><span class="sp-t">Cry</span><span class="sp-a">Cigarettes After Sex</span></li>
+            <li><span class="sp-t">I Don't Know</span><span class="sp-a">Erika</span></li>
+            <li><span class="sp-t">Jane!</span><span class="sp-a">The Long Faces</span></li>
+          </ol>
+        </div>
+        <a class="btn sp-btn" href="https://open.spotify.com/user/313pkzva6nxdve7wllkh22uwzwdm?si=ced6cf285ca94421" target="_blank" rel="noopener" data-magnet>Open my Spotify profile</a>
+      </section>
+
+      <section class="steam" id="steam">
+        <div class="section-head">
+          <h2 class="sec-title st-title" data-reveal data-split data-parallax="0.05">Steam</h2>
+          <p data-reveal style="--d:.08s">The backlog is not a problem. It is a library.</p>
+        </div>
+
+        <div class="sp-stats st-stats" data-reveal>
+          <div class="sp-stat"><span class="sp-num" data-count="36">0</span><span class="sp-key">games owned</span></div>
+          <div class="sp-stat"><span class="sp-num" data-count="484">0</span><span class="sp-key">hours played</span></div>
+          <div class="sp-stat"><span class="sp-num" data-count="10">0</span><span class="sp-key">steam level</span></div>
+        </div>
+
+        <div class="sp-card" data-reveal>
+          <h3 class="sp-h">Most played</h3>
+          <ol class="sp-list">
+            <li><span class="sp-name-a">Brawlhalla</span><span class="sp-bar st-bar"><i style="--w:100%"></i></span><span class="sp-plays">152h</span></li>
+            <li><span class="sp-name-a">Counter-Strike 2</span><span class="sp-bar st-bar"><i style="--w:68%"></i></span><span class="sp-plays">103h</span></li>
+            <li><span class="sp-name-a">Euro Truck Simulator 2</span><span class="sp-bar st-bar"><i style="--w:45%"></i></span><span class="sp-plays">68h</span></li>
+            <li><span class="sp-name-a">THE FINALS</span><span class="sp-bar st-bar"><i style="--w:41%"></i></span><span class="sp-plays">63h</span></li>
+            <li><span class="sp-name-a">Wallpaper Engine</span><span class="sp-bar st-bar"><i style="--w:20%"></i></span><span class="sp-plays">30h</span></li>
+          </ol>
+        </div>
+        <div class="sp-card" data-reveal style="--d:.1s">
+          <h3 class="sp-h">Currently grinding</h3>
+          <ol class="sp-tracks">
+            <li><span class="sp-t">Euro Truck Simulator 2</span><span class="sp-a">7h this week</span></li>
+            <li><span class="sp-t">Wallpaper Engine</span><span class="sp-a">5h this week</span></li>
+            <li><span class="sp-t">THE FINALS</span><span class="sp-a">4h this week</span></li>
+          </ol>
+        </div>
+        <a class="btn st-btn" href="https://steamcommunity.com/id/waggynotfound/" target="_blank" rel="noopener" data-magnet>Open my Steam profile</a>
+      </section>
+    </div>
+  </div>
+
+  <section class="contact" id="contact">
+    <div class="shell">
+      <h2 class="sec-title" data-reveal data-split data-parallax="0.05">Contact</h2>
+      <p class="contact-lede" data-reveal style="--d:.06s">
+        Have something that needs to feel fast? I take on two projects at a time.
+      </p>
+
+      <div class="contact-line" data-reveal style="--d:.12s">
+        <a class="mail" href="mailto:waggynotfound@gmail.com" data-magnet>waggynotfound@gmail.com</a>
+        <button class="copy" type="button" data-copy="waggynotfound@gmail.com">copy</button>
+      </div>
+
+      <div class="contact-links" data-reveal style="--d:.18s">
+        <a class="link" href="https://github.com/waggynotfound/" target="_blank" rel="noopener">github</a>
+        <a class="link" href="#socials">all socials</a>
+        <a class="link" href="#top">back to top</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="shell foot-inner">
+    <span>© 2026 waggy</span>
+    <span>hand-written HTML, CSS and JS. no framework, no build step.</span>
+  </div>
+</footer>
+
+<div class="toasts" aria-live="polite"></div>
+
+<div class="bgm">
+  <button class="bgm-btn" id="bgm-toggle" aria-label="Mute background music" aria-pressed="false">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path class="snd-wave" d="M15.5 9.5a4 4 0 0 1 0 5M18 7a7.5 7.5 0 0 1 0 10"/></svg>
+  </button>
+  <input class="bgm-vol" id="bgm-vol" type="range" min="0" max="100" value="40" aria-label="Background music volume">
+</div>
+
+<button class="term-fab" type="button" aria-label="Open terminal" aria-expanded="false" aria-controls="term-panel">&gt;_</button>
+<div class="term-panel" id="term-panel" role="dialog" aria-label="Mini terminal" hidden>
+  <div class="term-head">
+    <span class="term-title">waggy@portfolio:~</span>
+    <button class="term-close" type="button" aria-label="Close terminal">×</button>
+  </div>
+  <div class="term-out" aria-live="polite"></div>
+  <form class="term-form">
+    <span class="term-prompt" aria-hidden="true">$</span>
+    <input class="term-in" type="text" autocomplete="off" spellcheck="false" aria-label="Type a command — try help">
+  </form>
+</div>
+
+<script src="main.js"></script>
+<script src="cursor.js"></script>
+<script src="github-activity.js"></script>
+</body>
+</html>

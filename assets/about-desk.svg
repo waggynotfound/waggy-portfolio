@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="330" viewBox="0 0 500 330" role="img" aria-labelledby="title">
+  <title id="title">The edit desk: a violet CRT, keyboard and wired mouse</title>
+  <defs>
+    <pattern id="stock" width="5" height="5" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".65" fill="#ad90bb" opacity=".28"/></pattern>
+    <pattern id="keys" width="12" height="12" patternUnits="userSpaceOnUse"><rect x="1" y="1" width="10" height="9" rx="1.5" fill="#705e7c"/><rect x="1" width="10" height="8" rx="1.5" fill="#e4d7e4"/></pattern>
+    <pattern id="vents" width="7" height="8" patternUnits="userSpaceOnUse"><path d="M2 0v8" stroke="#53485e" stroke-width="2.5"/></pattern>
+    <clipPath id="glass"><rect x="17" y="13" width="186" height="118" rx="11"/></clipPath>
+  </defs>
+  <rect width="500" height="330" fill="#3e3249"/>
+  <rect width="500" height="330" fill="url(#stock)"/>
+  <!-- Cast shadows and cable run along the table before the objects are laid in. -->
+  <path d="m77 253 83-41 185 13 64 24-51 36-83 12-196-25z" fill="#2d2535"/>
+  <path d="M306 195c47 2 25 21 63 24s53 20 26 25c-16 3-33-4-36 4" fill="none" stroke="#201b27" stroke-width="3"/>
+  <path d="m144 218 44-18 111 9 20 18-39 21-141-12z" fill="#8b7895" stroke="#3c3045" stroke-width="2"/>
+  <path d="m139 229 141 12 39-20v9l-39 20-141-12z" fill="#74617e"/>
+  <path d="m173 203 83 7-1 21-84-7z" fill="#63536f"/>
+  <!-- Front plane of the CRT; the top and right faces recede towards the back. -->
+  <g transform="matrix(1 .085 -.04 1 119 52)">
+    <path d="M4 2 51-20q4-2 10-1l191 4q9 1 10 9l-43 28z" fill="#d5c2d7" stroke="#53435d" stroke-width="2"/>
+    <path d="m218 5 43-19q4 1 4 7l-5 120q0 7-4 11l-38 29z" fill="#86728e" stroke="#53435d" stroke-width="2"/>
+    <path d="m228 39 27-12-1 46-28 14z" fill="url(#vents)"/>
+    <rect width="220" height="160" rx="9" fill="#b7a1be" stroke="#58495f" stroke-width="2"/>
+    <path d="M9 3h201" stroke="#e4d5e3" stroke-width="2"/>
+    <rect x="10" y="7" width="200" height="131" rx="14" fill="#79657e"/>
+    <rect x="15" y="11" width="190" height="122" rx="12" fill="#261e30"/>
+    <g clip-path="url(#glass)">
+      <rect x="17" y="13" width="186" height="118" fill="#252033"/>
+      <path d="M17 17h186" stroke="#706082" stroke-width="4"/>
+      <!-- Editing window: landscape preview, two video tracks and an audio track. -->
+      <rect x="24" y="25" width="100" height="98" rx="2" fill="#3c314c"/>
+      <rect x="29" y="30" width="90" height="48" fill="#8e80b0"/>
+      <circle cx="91" cy="44" r="9" fill="#f6bc9f"/>
+      <path d="m29 65 24-20 23 19 14-12 29 22v4H29z" fill="#5e5077"/>
+      <path d="m29 76 33-16 11 6 12-7 34 17v2H29z" fill="#443950"/>
+      <path d="M29 85h90" stroke="#8e7ca3" stroke-dasharray="1 4" stroke-width="2"/>
+      <path d="M29 89h24v8H29zm27 0h36v8H56zm39 0h24v8H95z" fill="#af97d3"/>
+      <path d="M38 100h30v6H38zm33 0h38v6H71z" fill="#cc99a2"/>
+      <rect x="29" y="109" width="90" height="9" fill="#688e89"/>
+      <path d="m30 114 7-1 3 2 4-3 4 3 4-2 5 1 3-3 4 4 6-2 5 2 2-3 4 2 3-1 3 1 4-3 5 3 3-1 4 2 3-3 5 2 6-1" stroke="#c5ddc8" fill="none"/>
+      <path d="M76 84v36" stroke="#ffcd98" stroke-width="1.5"/><path d="m73 83 3 4 3-4z" fill="#ffcd98"/>
+      <!-- Second window: terminal prompt and indented syntax. -->
+      <rect x="130" y="25" width="65" height="98" rx="2" fill="#282534" stroke="#55485f"/>
+      <path d="M130 32h65" stroke="#55485f"/>
+      <g fill="#a88bb5"><circle cx="135" cy="28.5" r="1"/><circle cx="140" cy="28.5" r="1"/><circle cx="145" cy="28.5" r="1"/></g>
+      <g stroke-width="2.8" fill="none">
+        <path d="m137 41 4 3-4 3m7 0h6" stroke="#a8d3b3"/>
+        <path d="M137 54h19m4 0h8m-26 8h16m4 0h10m-30 22h12m-17 15h24" stroke="#bd9adc"/>
+        <path d="M146 69h11m4 0h18m-33 7h24m-28 15h26m-31 15h8" stroke="#9fc0bd"/>
+      </g>
+    </g>
+    <path d="m19 145 3 7 4-5 4 5 3-7" fill="none" stroke="#57455f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M151 148h17" stroke="#8e7897" stroke-width="2"/>
+    <circle cx="179" cy="148" r="2" fill="#b3e3b7"/><rect x="189" y="144" width="10" height="7" rx="2" fill="#8d7796" stroke="#6c5975"/>
+  </g>
+  <g transform="matrix(1 .09 -.57 .67 110 235)">
+    <rect y="5" width="213" height="66" rx="4" fill="#786581" stroke="#44374c" stroke-width="2"/>
+    <rect width="213" height="66" rx="4" fill="#c6b1cb" stroke="#67556f" stroke-width="2"/>
+    <path d="M10 9h145v36H10zm155 0h38v48h-38z" fill="url(#keys)"/>
+    <g fill="#e4d7e4" stroke="#97829e"><rect x="10" y="48" width="21" height="9" rx="1.5"/><rect x="34" y="48" width="89" height="9" rx="1.5"/><rect x="126" y="48" width="28" height="9" rx="1.5"/></g>
+  </g>
+  <g transform="translate(358 262) rotate(17)">
+    <ellipse cx="2" cy="4" rx="16" ry="21" fill="#312939"/>
+    <rect x="-14" y="-20" width="28" height="39" rx="13" fill="#c6b1cb" stroke="#786581" stroke-width="2"/>
+    <path d="M0-19v15m-13 3h26" fill="none" stroke="#897392" stroke-width="1.5"/>
+  </g>
+</svg>
